@@ -1,5 +1,8 @@
-const express = require('express');
+import express from 'express';
 const app = express();
+
+// database
+// 
 
 app.get('/', (req, res) => {
     res.send('asdf');

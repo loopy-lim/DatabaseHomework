@@ -1,5 +1,3 @@
-import React from "react";
-
 function Head () {
     return (
       <header className="p-3 bg-dark text-wite">

@@ -1,4 +1,3 @@
-import React from "react";
 import { BsTwitter, BsInstagram, BsFacebook } from "react-icons/bs";
 
 function Foot() {

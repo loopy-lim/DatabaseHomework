@@ -10,7 +10,9 @@ function App() {
     <>
       <Head></Head>
       <div className="container">
+        <div className="mt-4"></div>
         <MainCarousel/> 
+        <div className="mt-4"></div>
         <Board></Board>
       </div>
       <Foot></Foot>

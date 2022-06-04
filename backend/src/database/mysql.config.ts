@@ -1,5 +1,6 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
+import { join } from 'path';
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ export const mysqlModule = TypeOrmModule.forRoot({
   username: env.USERNAME,
   password: env.PASSWORD,
   database: env.DATABASE,
-  entities: [],
+  entities: [join(__dirname, '/**/*.entity.ts')],
   synchronize: true,
   connectTimeout: 20000,
 });

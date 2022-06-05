@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import Board from './board/Board';
-import Head from './main_component/Head';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Foot from './main_component/Foot';
-import MainCarousel from './components/MainCarousel';
+import Head from "./main_component/Head";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Foot from "./main_component/Foot";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/Main.pages";
 
 function App() {
   return (
     <>
       <Head></Head>
       <div className="container">
-        <div className="mt-4"></div>
-        <MainCarousel/> 
-        <div className="mt-4"></div>
-        <Board></Board>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />}></Route>
+            <Route path="/login" element="asdf"></Route>
+          </Routes>
+        </BrowserRouter>
       </div>
       <Foot></Foot>
     </>

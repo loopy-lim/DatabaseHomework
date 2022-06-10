@@ -1,7 +1,8 @@
 import { Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from '../user.entity';
 
-@Entity('ADMIN')
-export class User {
+@Entity('USER_ADMIN')
+export class Admin {
   @PrimaryGeneratedColumn({ type: 'int', name: 'USER_ADMIN_PK' })
   userAdminPk: number;
 

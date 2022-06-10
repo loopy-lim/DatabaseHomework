@@ -5,9 +5,10 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { User } from '../user.entity';
 
 @Entity('USER_PROVIDER')
-export class User {
+export class Provider {
   @PrimaryGeneratedColumn({ type: 'int', name: 'USER_PROVIDER_PK' })
   userPk: number;
 

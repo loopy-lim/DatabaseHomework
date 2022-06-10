@@ -11,6 +11,6 @@ export class User {
   @Column({ type: 'timestamp', name: 'USER_INSPIRE_DATE' })
   inspireDate: Date;
 
-  @Column({ type: 'timestamp', name: 'USER_INSPIRE_DATE' })
+  @Column({ type: 'timestamp', name: 'USER_EXPIRED_DATE' })
   expireDate: Date;
 }

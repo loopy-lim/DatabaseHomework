@@ -1,4 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('USER')
 export class User {
@@ -8,9 +13,13 @@ export class User {
   @Column({ type: 'varchar', name: 'USER_NAME' })
   userName: string;
 
-  @Column({ type: 'timestamp', name: 'USER_INSPIRE_DATE' })
+  @Column({
+    type: 'timestamp',
+    name: 'USER_INSPIRE_DATE',
+    default: () => 'CURRENT_TIMESTAMP',
+  })
   inspireDate: Date;
 
-  @Column({ type: 'timestamp', name: 'USER_EXPIRED_DATE' })
+  @DeleteDateColumn({ name: 'USER_EXPIRE_DATE' })
   expireDate: Date;
 }

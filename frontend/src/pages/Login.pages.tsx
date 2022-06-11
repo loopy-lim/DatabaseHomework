@@ -1,6 +1,8 @@
+import "./Login.css";
+
 function Login() {
   return (
-    <div className="d-flex flex-column h-100">
+    <div className="d-flex flex-column h-100 container">
       <div className="flex-grow-1 flex-shrink-1 text-center">
         <main className="form-signin w-100 m-auto ">
           <form>

@@ -9,4 +9,14 @@ export class UserController {
     this.userService.saveUser(name);
     return 'success';
   }
+
+  @Get('findAll')
+  async findAll(): Promise<string> {
+    const datas = await this.userService.findAll();
+    let result = '';
+    datas.forEach((user) => {
+      result += `${user.userName}, ${user.userPk}, ${user.inspireDate}\n`;
+    });
+    return result;
+  }
 }

@@ -2,9 +2,9 @@ import { UserConsumer } from 'src/user/consumer/consumer.entity';
 import { UserProvider } from 'src/user/provider/provider.entity';
 import {
   Column,
-  DeleteDateColumn,
   Entity,
   JoinColumn,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -18,20 +18,24 @@ export class Exchange {
   exchangeState: string;
 
   @Column({
-    type: 'timestamp',
+    type: 'datetime',
     name: 'INSPIRE_DATE',
     default: () => 'CURRENT_TIMESTAMP',
   })
   inspireDate: Date;
 
-  @DeleteDateColumn({ name: 'sEXPIRE_DATE' })
+  @Column({
+    type: 'datetime',
+    name: 'EXPIRE_DATE',
+    default: () => `99991231235959`,
+  })
   expireDate: Date;
 
-  @OneToMany(() => UserConsumer, (userConsumer) => userConsumer.userConsumerPk)
+  @ManyToOne(() => UserConsumer)
   @JoinColumn({ name: 'USER_CONSUMER_PK' })
-  userConsumer: UserConsumer[];
+  userConsumer: UserConsumer;
 
-  @OneToMany(() => UserProvider, (UserProvider) => UserProvider.userProivderPk)
+  @ManyToOne(() => UserProvider)
   @JoinColumn({ name: 'USER_PROVIDER_PK' })
-  UserProvider: UserProvider[];
+  UserProvider: UserProvider;
 }

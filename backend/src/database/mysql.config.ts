@@ -1,5 +1,6 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
+import { Exchange } from 'src/exchange/exchange.entity';
 import { UserAdmin } from 'src/user/admin/admin.entity';
 import { UserConsumer } from 'src/user/consumer/consumer.entity';
 import { UserProvider } from 'src/user/provider/provider.entity';
@@ -17,7 +18,7 @@ export const mysqlModule = TypeOrmModule.forRoot({
   username: env.USERNAME,
   password: env.PASSWORD,
   database: env.DATABASE,
-  entities: [User, UserAdmin, UserConsumer, UserProvider],
+  entities: [User, UserAdmin, UserConsumer, UserProvider, Exchange],
   synchronize: true,
   connectTimeout: 20000,
 });

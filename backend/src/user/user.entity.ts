@@ -1,9 +1,4 @@
-import {
-  Column,
-  DeleteDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('USER')
 export class User {
@@ -20,6 +15,10 @@ export class User {
   })
   inspireDate: Date;
 
-  @DeleteDateColumn({ name: 'EXPIRE_DATE' })
+  @Column({
+    type: 'datetime',
+    name: 'EXPIRE_DATE',
+    default: () => `99991231235959`,
+  })
   expireDate: Date;
 }

@@ -3,6 +3,8 @@ import * as dotenv from 'dotenv';
 import { Board } from 'src/board/board.entity';
 import { BoardInfo } from 'src/board/boardInfo.entity';
 import { Exchange } from 'src/exchange/exchange.entity';
+import { Review } from 'src/review/review.entity';
+import { ReviewInfo } from 'src/review/reviewInfo.entity';
 import { UserAdmin } from 'src/user/admin/admin.entity';
 import { UserConsumer } from 'src/user/consumer/consumer.entity';
 import { UserProvider } from 'src/user/provider/provider.entity';
@@ -28,6 +30,8 @@ export const mysqlModule = TypeOrmModule.forRoot({
     Exchange,
     Board,
     BoardInfo,
+    Review,
+    ReviewInfo,
   ],
   synchronize: true,
   connectTimeout: 20000,

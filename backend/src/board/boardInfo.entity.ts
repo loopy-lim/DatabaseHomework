@@ -1,9 +1,15 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Board } from './board.entity';
 
 @Entity('BOARD_INFO')
 export class BoardInfo {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ type: 'int', name: 'BOARD_INFO_PK' })
   boardInfoPk: number;
 
   @Column({ type: 'varchar', name: 'TITLE' })

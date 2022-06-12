@@ -1,9 +1,15 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Review } from './review.entity';
 
 @Entity('REVIEW_INFO')
 export class ReviewInfo {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn({ type: 'int', name: 'REVIEW_INFO_PK' })
   reviewInfoPk: number;
 
   @Column({ type: 'varchar', name: 'TITLE' })

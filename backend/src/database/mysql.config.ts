@@ -2,6 +2,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
 import { Board } from 'src/board/board.entity';
 import { BoardInfo } from 'src/board/boardInfo.entity';
+import { BoardReview } from 'src/boardReview/boardReview.eneity';
 import { Exchange } from 'src/exchange/exchange.entity';
 import { Review } from 'src/review/review.entity';
 import { ReviewInfo } from 'src/review/reviewInfo.entity';
@@ -32,6 +33,7 @@ export const mysqlModule = TypeOrmModule.forRoot({
     BoardInfo,
     Review,
     ReviewInfo,
+    BoardReview,
   ],
   synchronize: true,
   connectTimeout: 20000,

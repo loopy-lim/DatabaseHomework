@@ -15,11 +15,11 @@ export class User {
 
   @Column({
     type: 'timestamp',
-    name: 'USER_INSPIRE_DATE',
+    name: 'INSPIRE_DATE',
     default: () => 'CURRENT_TIMESTAMP',
   })
   inspireDate: Date;
 
-  @DeleteDateColumn({ name: 'USER_EXPIRE_DATE' })
+  @DeleteDateColumn({ name: 'EXPIRE_DATE' })
   expireDate: Date;
 }

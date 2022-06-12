@@ -8,13 +8,13 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('EXCHANGE')
-export class Exchange {
-  @PrimaryGeneratedColumn({ type: 'int', name: 'EXCHANGE_PK' })
-  exchangePk: number;
+@Entity('BOARD')
+export class Board {
+  @PrimaryGeneratedColumn({ type: 'int', name: 'BOARD_PK' })
+  boardPk: number;
 
-  @Column({ type: 'varchar', name: 'EXCHANGE_STATE' })
-  exchangeState: string;
+  @Column({ type: 'int', name: 'ALOWED' })
+  exchangeState: number;
 
   @Column({
     type: 'datetime',
@@ -29,10 +29,6 @@ export class Exchange {
     default: () => `99991231235959`,
   })
   expireDate: Date;
-
-  @ManyToOne(() => UserConsumer)
-  @JoinColumn({ name: 'USER_CONSUMER_PK' })
-  userConsumer: UserConsumer;
 
   @ManyToOne(() => UserProvider)
   @JoinColumn({ name: 'USER_PROVIDER_PK' })

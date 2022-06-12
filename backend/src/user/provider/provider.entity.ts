@@ -10,7 +10,7 @@ import { User } from '../user.entity';
 @Entity('USER_PROVIDER')
 export class UserProvider {
   @PrimaryGeneratedColumn({ type: 'int', name: 'USER_PROVIDER_PK' })
-  userPk: number;
+  userProivderPk: number;
 
   @Column({ type: 'varchar', name: 'PROFILE_IMG' })
   profileImg: string;

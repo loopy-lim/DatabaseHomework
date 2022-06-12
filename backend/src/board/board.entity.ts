@@ -1,4 +1,3 @@
-import { UserConsumer } from 'src/user/consumer/consumer.entity';
 import { UserProvider } from 'src/user/provider/provider.entity';
 import {
   Column,
